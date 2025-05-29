@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "850376552890",
+    "firebase_url": "https://backendflutter-f9b1c-default-rtdb.firebaseio.com",
+    "project_id": "backendflutter-f9b1c",
+    "storage_bucket": "backendflutter-f9b1c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850376552890:android:20226b7608bb59a243ad83",
+        "android_client_info": {
+          "package_name": "com.example.loja_livros"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuWFIf5fRmmneewftzEmUnkoRLQYGoUgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850376552890:android:dd182f320f81b38e43ad83",
+        "android_client_info": {
+          "package_name": "com.viniciusmaschio.carros"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuWFIf5fRmmneewftzEmUnkoRLQYGoUgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
