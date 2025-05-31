@@ -62,6 +62,10 @@ class UserProvider extends ChangeNotifier {
     try {
       await userRepository.updateUser(id, user);
       await buscarTodosUsuarios();
+      if (_currentUser?.id == id) {
+        _currentUser = user;
+      }
+      notifyListeners();
     } catch (e) {
       _setError('Erro ao atualizar usuário: $e');
     } finally {
@@ -133,6 +137,14 @@ class UserProvider extends ChangeNotifier {
       _setError('Erro ao verificar usuário logado');
     } finally {
       _setLoading(false);
+    }
+  }
+
+  /// ALTERAR ADMIN
+  Future<void> alternarPermissaoAdminAtual() async {
+    if (_currentUser != null) {
+      final novoUsuario = _currentUser!.copyWith(isAdmin: !_currentUser!.isAdmin);
+      await atualizarUsuario(novoUsuario.id, novoUsuario);
     }
   }
 }

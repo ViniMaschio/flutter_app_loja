@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:loja_livros/providers/user_provider.dart';
-import 'custom_input.dart';
-import 'custom_button.dart';
+import '../../widgets/custom_input.dart';
+import '../../widgets/custom_button.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});

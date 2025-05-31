@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:loja_livros/models/users_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -14,14 +12,14 @@ class UserRepository {
       final userCredential = await _auth.createUserWithEmailAndPassword(email: user.email, password: user.senha);
       final userId = userCredential.user?.uid;
       if (userId != null) {
-        await _firestore.collection(collectionPath).doc(userId).set(user.copyWith(id: userId).toJson());
+        final userWithId = user.copyWith(id: userId, isAdmin: false); // define isAdmin como false por padrão
+        await _firestore.collection(collectionPath).doc(userId).set(userWithId.toJson());
       }
     } catch (e) {
       throw Exception('Erro ao adicionar usuário: $e');
     }
   }
 
-  /// Retorna todos os usuários em tempo real
   Stream<List<UserModel>> getAllUsers() {
     try {
       return _firestore.collection(collectionPath).snapshots().map((snapshot) {
@@ -34,7 +32,6 @@ class UserRepository {
     }
   }
 
-  /// Busca usuário pelo ID
   Future<UserModel?> getUserById(String id) async {
     try {
       final doc = await _firestore.collection(collectionPath).doc(id).get();
@@ -44,25 +41,23 @@ class UserRepository {
         return null;
       }
     } catch (e) {
-      throw Exception('Erro ao adicionar usuário: $e');
+      throw Exception('Erro ao buscar usuário: $e');
     }
   }
 
   Future<void> updateUser(String id, UserModel user) async {
     try {
       await _firestore.collection(collectionPath).doc(id).update(user.toJson());
-      //print('Usuário atualizado com sucesso: ${user.nome}');
     } catch (e) {
-      throw Exception('Erro ao adicionar usuário: $e');
+      throw Exception('Erro ao atualizar usuário: $e');
     }
   }
 
   Future<void> deleteUser(String id) async {
     try {
       await _firestore.collection(collectionPath).doc(id).delete();
-      print('Usuário removido com sucesso: $id');
     } catch (e) {
-      throw Exception('Erro ao adicionar usuário: $e');
+      throw Exception('Erro ao remover usuário: $e');
     }
   }
 

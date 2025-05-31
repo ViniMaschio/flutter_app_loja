@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:loja_livros/models/book_model.dart';
 import 'package:loja_livros/providers/book_provider.dart';
-import 'package:loja_livros/widgets/custom_book_form.dart';
+import 'package:loja_livros/pages/livros_pages/custom_book_form.dart';
 
 class EditarLivroPage extends StatelessWidget {
   final BookModel livroExistente;

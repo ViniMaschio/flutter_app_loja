@@ -2,12 +2,15 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_livros/firebase_options.dart';
 import 'package:loja_livros/models/book_model.dart';
-import 'package:loja_livros/pages/cadastro_livro_page.dart';
-import 'package:loja_livros/pages/create_user_page.dart';
-import 'package:loja_livros/pages/editar_livro_page.dart';
+import 'package:loja_livros/pages/livros_pages/cadastro_livro_page.dart';
+import 'package:loja_livros/pages/login_pages/create_user_page.dart';
+import 'package:loja_livros/pages/livros_pages/editar_livro_page.dart';
 import 'package:loja_livros/pages/home_page.dart';
-import 'package:loja_livros/pages/listar_livro_page.dart';
-import 'package:loja_livros/pages/login_page.dart';
+import 'package:loja_livros/pages/livros_pages/listar_livro_page.dart';
+import 'package:loja_livros/pages/login_pages/login_page.dart';
+import 'package:loja_livros/pages/loja_page.dart';
+import 'package:loja_livros/pages/minhas_compras_page.dart';
+import 'package:loja_livros/pages/profile_pages/profile_page.dart';
 import 'package:loja_livros/pages/welcome_view_page.dart';
 import 'package:loja_livros/providers/book_provider.dart';
 import 'package:loja_livros/providers/user_provider.dart';
@@ -32,7 +35,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,6 +46,10 @@ class MyApp extends StatelessWidget {
         '/home_page': (BuildContext teste) => const HomePage(),
         '/cadastro_livro': (context) => const CadastroLivroPage(),
         '/listar_livro': (context) => const ListarLivroPage(),
+        '/welcome_view': (context) => const WelcomeViewPage(),
+        '/profile_page': (context) => const ProfilePage(),
+        '/loja_page': (context) => const LojaPage(),
+        '/compras_page': (context) => const MinhasComprasPage(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/editar_livro') {
@@ -51,7 +57,7 @@ class MyApp extends StatelessWidget {
           return MaterialPageRoute(builder: (context) => EditarLivroPage(livroExistente: livro));
         }
 
-        return null; // rota não encontrada
+        return null;
       },
     );
   }

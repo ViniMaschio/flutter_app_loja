@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:loja_livros/widgets/custom_button.dart';
-import 'package:loja_livros/widgets/title_text.dart';
 
 class WelcomeViewPage extends StatelessWidget {
   const WelcomeViewPage({super.key});
@@ -13,8 +12,9 @@ class WelcomeViewPage extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const TitleText(text: 'Bem-vindo à Livraria!'),
+              const Text('Bem-vindo à Livraria!', textAlign: TextAlign.center, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
               const SizedBox(height: 40),
               CustomButton(label: 'Login', onPressed: () => Navigator.pushNamed(context, '/login_page')),
               const SizedBox(height: 16),
