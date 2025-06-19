@@ -1,16 +1,38 @@
-# loja_livros
+# 📚 Flutter Library App
 
-A new Flutter project.
+Aplicativo Flutter com integração ao Firebase, simulando o funcionamento de uma *libraria digital*, com funcionalidades de autenticação, gerenciamento administrativo e loja virtual para usuários comuns.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🧩 Funcionalidades
 
-A few resources to get you started if this is your first Flutter project:
+### 🔐 Autenticação
+- Cadastro e login de usuários usando **Firebase Authentication**.
+- Diferenciação de usuários:
+  - 👩‍💼 **Administrador**: acesso a cadastros e gerenciamento.
+  - 🧑 **Usuário comum**: acesso à loja e histórico de compras.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 🛒 Loja Virtual
+- Visualização de produtos disponíveis.
+- Realização de compras com persistência no Firebase.
+- Listagem de todas as compras feitas por um usuário.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🗂️ Cadastro de Itens (Admin)
+- Adição de novos produtos (livros ou itens da loja).
+- Interface exclusiva para administradores.
+
+### ☁️ Firebase Firestore
+- Todos os dados são armazenados na nuvem com **Cloud Firestore**:
+  - Usuários
+  - Produtos
+  - Compras
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- **Flutter** – Framework para desenvolvimento mobile cross-platform.
+- **Firebase Authentication** – Login/cadastro de usuários.
+- **Firebase Firestore** – Banco de dados em tempo real.
+- **Provider** – Gerenciamento de estado.
+- **Material Design** – Interface amigável e responsiva.
